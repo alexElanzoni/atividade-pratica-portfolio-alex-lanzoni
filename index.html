@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!-- Configurações básicas da página -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alex Estevão Lanzoni | Portfólio</title>
+
+    <!-- Ligação com  (CSS) -->
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+<!-- ========== MENU INICIAL  ========== -->
+<header class="topo">
+    <h1 class="logo">Alex Lanzoni</h1>
+
+    <!-- Botão que abre/fecha o menu no celular -->
+    <button id="btn-menu" class="btn-menu" aria-label="Abrir menu">☰</button>
+
+<!-- Opções do menu -->
+    <nav id="menu" class="menu">
+        <a href="#sobre">Sobre mim</a>
+        <a href="#formacao">Formação</a>
+        <a href="#portfolio">Portfólio</a>
+        <a href="#contato">Contato</a>
+    </nav>
+
+    <!-- Botão de tema claro/escuro -->
+    <button id="btn-tema" class="btn-tema" aria-label="Alternar tema">🌙</button>
+</header>
+
+<main>
+
+    <!-- ========== SEÇÃO 1: SOBRE MIM ========== -->
+    <section id="sobre" class="secao">
+        <h2>Sobre mim</h2>
+        <p>Olá! Eu sou o <strong>Alex Estevão Lanzoni</strong>.</p>
+        <p>Estudante de ADS, tenho 39 anos, moro em São Paulo.</p>
+        <p>Sou pintor e decidi mudar de área. Escolhi Análise e Desenvolvimento de Sistemas para entrar no mundo da tecnologia.</p>
+        <p>Meu objetivo é trabalhar com UX/UI Design, criando sites e aplicativos bonitos e fáceis de usar. Minha experiência com cores e visual me ajuda a olhar para o design com outros olhos.</p>
+
+        <!-- Lista de hobbies -->
+        <h3>Hobbies</h3>
+        <ul>
+            <li>Ler </li>
+            <li>Estudar mandarim</li>
+            <li>Caminhar</li>
+        </ul>
+    </section>  <!-- Fim da Seção 1 -->
+
+    <!-- ========== SEÇÃO 2: FORMAÇÃO ========== -->
+    <section id="formacao" class="secao">
+        <h2>Formação</h2>
+
+        <!-- Bloco nome do curso e instituição-->
+        <h3>Formação educacional</h3>
+        <ul>
+            <li>Análise e Desenvovilmento de Sistemas- Uninter</li>
+        </ul>
+
+        <!-- Bloco - Cursos Complementares que já fiz ou estou fazendo-->
+        <h3>Cursos</h3>
+        <ul>
+            <li>Análise de Dados</li>
+            <li>Mandarim </li>
+        </ul>
+
+        <!-- Bloco - Idiomas que falo -->
+        <h3>Idiomas</h3>
+        <ul>
+            <li>Português: Nativo</li>
+            <li>Mandarim: Iniciante </li>
+        </ul>
+    </section> <!-- Fim da seção Formação -->
+
+    <!-- ========== SEÇÃO 3: PORTFÓLIO ========== -->
+    <section id="portfolio" class="secao">
+        <h2>Portfólio</h2>
+        <p>Alguns trabalhos que já realizei:</p>
+
+        <!-- Bloco -  link para meu Portifolio -->
+        <div class="cartoes">
+            <article class="cartao">
+                <h3>Portifolio</h3>
+                <p>Site do meu portifolio</p>
+                <a href="https://portifolio-alex.netlify.app/" target="_blank" rel="noopener">Ver projeto</a>
+            </article>
+
+        </div>
+    </section> <!-- Fim do bloco Portifolio -->
+
+    <!-- ========== SEÇÃO 4: CONTATO ========== -->
+    <section id="contato" class="secao">
+        <h2>Contato</h2>
+
+        <!-- O formulário inteiro. O id="form-contato" é como o JavaScript o encontra -->
+        <!-- "novalidate" desliga a validação do navegador: quem valida é o nosso JavaScript -->
+        <form id="form-contato" novalidate>
+
+            <!-- Campo 1: nome. O "for" liga o texto ao campo (clicar no texto seleciona o campo) -->
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" placeholder="Seu nome">
+            <!-- Espaço reservado: o JavaScript escreve aqui o erro -->
+            <span class="erro" id="erro-nome"></span>
+
+            <!-- Campo: e-mail. O JavaScript confere se tem o formato usuario@dominio.com -->
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" placeholder="usuario@dominio.com">
+            <!-- Espaço reservado para o erro do e-mail -->
+            <span class="erro" id="erro-email"></span>
+
+            <!-- Campo: mensagem. caixa de texto grande (rows="5" = 5 linhas) -->
+            <label for="mensagem">Mensagem</label>
+            <textarea id="mensagem" name="mensagem" rows="5" placeholder="Escreva sua mensagem"></textarea>
+            <span class="erro" id="erro-mensagem"></span>
+
+            <!-- Botão que dispara o envio (o JavaScript intercepta e valida antes) -->
+            <button type="submit">Enviar</button>
+
+            <!-- Aqui aparece "Mensagem enviada com sucesso!" -->
+            <p id="msg-sucesso" class="sucesso"></p>
+        </form>
+    </section>
+
+</main>
+<!-- Aqui começa o rodapé -->
+<footer class="rodape">
+    <p>&copy; 2026 Alex Estevão Lanzoni</p>
+</footer>
+
+<!-- Liga o arquivo de ações (JavaScript) -->
+<script src="script.js"></script>
+</body>
+</html>

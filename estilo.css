@@ -1,0 +1,196 @@
+/* ===== CORES (tema claro e escuro) ===== */
+/* Pense como tintas guardadas em potes: trocar o pote troca a cor de tudo */
+:root {
+  --fundo: #f5f7fa;
+  --texto: #1f2933;
+  --destaque: #2563eb;
+  --cartao: #ffffff;
+  --borda: #d0d7de;
+}
+
+/* Quando o JavaScript colocar a classe "escuro" no body, os potes mudam */
+body.escuro {
+  --fundo: #111827;
+  --texto: #e5e7eb;
+  --destaque: #60a5fa;
+  --cartao: #1f2937;
+  --borda: #374151;
+}
+
+/* ===== BASE ===== */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth; /* rolagem suave ao clicar no menu */
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  background: var(--fundo);
+  color: var(--texto);
+  transition: background 0.3s, color 0.3s;
+}
+
+/* ===== MENU NO TOPO ===== */
+.topo {
+  position: sticky; /* fica grudado no topo ao rolar */
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 12px 20px;
+  background: var(--cartao);
+  border-bottom: 1px solid var(--borda);
+}
+
+.logo {
+  margin: 0;
+  font-size: 1.3rem;
+  color: var(--destaque);
+}
+
+.menu {
+  display: flex;
+  gap: 18px;
+}
+
+.menu a {
+  color: var(--texto);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.menu a:hover {
+  color: var(--destaque);
+}
+
+.btn-menu,
+.btn-tema {
+  background: none;
+  border: 1px solid var(--borda);
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  color: var(--texto);
+}
+
+/* O botão ☰ só aparece no celular */
+.btn-menu {
+  display: none;
+}
+
+/* ===== SEÇÕES ===== */
+.secao {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 25px;
+  background: var(--cartao);
+  border: 1px solid var(--borda);
+  border-radius: 10px;
+  scroll-margin-top: 80px; /* evita o menu cobrir o título */
+}
+
+.secao h2 {
+  margin-top: 0;
+  color: var(--destaque);
+}
+
+/* ===== CARTÕES DO PORTFÓLIO ===== */
+.cartoes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.cartao {
+  padding: 16px;
+  border: 1px solid var(--borda);
+  border-radius: 8px;
+}
+
+.cartao a {
+  color: var(--destaque);
+  font-weight: bold;
+}
+
+/* ===== FORMULÁRIO ===== */
+form label {
+  display: block;
+  margin-top: 14px;
+  font-weight: bold;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 4px;
+  border: 1px solid var(--borda);
+  border-radius: 6px;
+  background: var(--fundo);
+  color: var(--texto);
+  font-size: 1rem;
+}
+
+form input.invalido,
+form textarea.invalido {
+  border-color: #dc2626; /* borda vermelha quando há erro */
+}
+
+form button[type="submit"] {
+  margin-top: 16px;
+  padding: 10px 24px;
+  background: var(--destaque);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.erro {
+  display: block;
+  min-height: 1.2em;
+  color: #dc2626;
+  font-size: 0.9rem;
+}
+
+.sucesso {
+  color: #16a34a;
+  font-weight: bold;
+}
+
+/* ===== RODAPÉ ===== */
+.rodape {
+  text-align: center;
+  padding: 20px;
+  border-top: 1px solid var(--borda);
+}
+
+/* ===== CELULAR (telas pequenas) ===== */
+@media (max-width: 700px) {
+  .btn-menu {
+    display: block;
+  }
+
+  /* Menu começa escondido... */
+  .menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    order: 4;
+  }
+
+  /* ...e aparece quando o JavaScript coloca a classe "aberto" */
+  .menu.aberto {
+    display: flex;
+  }
+}
